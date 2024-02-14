@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-sc
+  labels:
+    name: pod-sc
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      volumes:
+        - name: primeiro-pv
+          persistenceVolumeClaim:
+            claimName: pvc-2
